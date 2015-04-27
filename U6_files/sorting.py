@@ -4,86 +4,92 @@
 # http://simpson.edu/computer-science/
 #
 # modified for use in UJ python course
-import sys
+"""
+opisanie losowanie
+"""
+
 import random
 
-class selection_sort:
-     
-    # The selection sort
-    def __call__(self,list):
-     
+class SelectionSort(object):
+    """
+    The selection sort
+    """
+
+    def __call__(self, lista):
         # Loop through the entire array
-       for curPos in range( len(list) ):
+        for position in range(len(lista)):
             # Find the position that has the smallest number
             # Start with the current position
-            minPos = curPos
-             
+            minimal_position = position
             # Scan left to right (end of the list)
-            for scanPos in range(curPos+1, len(list) ):
-             
+            for scanning_position in range(position+1, len(lista)):
                 # Is this position smallest?
-                if list[scanPos]< list[minPos]:
-                 
+                if lista[scanning_position] < lista[minimal_position]:
                     # It is, mark this position as the smallest
-                    minPos = scanPos
-             
+                    minimal_positions = scanning_position
             # Swap the two values
-            temp = list[minPos]
-            list[minPos] = list[curPos]
-            list[curPos] = temp
-     
+            temp = lista[minimal_positions]
+            lista[minimal_position] = lista[position]
+            lista[position] = temp
 
 
-class insertion_sort:
 
-    def __call__(this, list):   
+class InsertionSort(object):
+    """
+    The insertion sort
+    """
+
+    def __call__(self, lista):
         # Start at the second element (pos 1).
         # Use this element to insert into the
         # list.
-        for keyPos in range(1, len(list)):
-         
+        for key_pos in range(1, len(lista)):
+
             # Get the value of the element to insert
-            keyValue = list[keyPos]
-             
+            key_value = lista[key_pos]
+
             # Scan from right to the left (start of list)
-            scanPos = keyPos - 1
-             
+            scan_pos = key_pos - 1
+
             # Loop each element, moving them up until
-            # we reach the position the 
-            while (scanPos >= 0) and (list[scanPos] > keyValue):
-                list[scanPos + 1] = list[scanPos]
-                scanPos = scanPos - 1
-                 
+            # we reach the position the
+            while (scan_pos >= 0) and (lista[scan_pos] > key_value):
+                lista[scan_pos + 1] = lista[scan_pos]
+                scan_pos = scan_pos - 1
+
             # Everything's been moved out of the way, insert
             # the key into the correct location
-            list[scanPos +  1]= keyValue
-     
-         
-# This will point out a list
-def print_list(list):
-    for item in list:
-        print "%3d" % item,
-    print()
+            lista[scan_pos +  1] = key_value
 
-if __name__ == '__main__':     
+
+# This will point out a list
+def print_list(lista):
+    """
+    Cos printuje sobie
+    """
+    for item in lista:
+        print "%3d" % item,
+    print "\n"
+
+if __name__ == '__main__':
     # Create two lists of the same random numbers
-    list1 = []
-    list2 = []
-    list_size = 10
-    for i in range(list_size):
+    FIRST_LIST = []
+    SECOND_LIST = []
+    LIST_SIZE = 10
+    for i in range(LIST_SIZE):
         new_number = random.randrange(100)
-        list1.append(new_number)
-        list2.append(new_number)
-     
+        FIRST_LIST.append(new_number)
+        SECOND_LIST.append(new_number)
+
     # Print the original list
-    print_list(list1)
-     
+    print_list(FIRST_LIST)
+
     # Use the selection sort and print the result
-    print("Selection Sort")
-    selection_sort()(list1)        
-    print_list(list1)
-     
+    print "Selection Sort"
+    SelectionSort()(FIRST_LIST)
+    print_list(FIRST_LIST)
+
     # Use the insertion sort and print the result
-    print("Insertion Sort")
-    insertion_sort()(list2)        
-    print_list(list2)
+    print "Insertion Sort"
+    InsertionSort()(SECOND_LIST)
+    print_list(SECOND_LIST)
