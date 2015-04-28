@@ -1,0 +1,16 @@
+zbior obrazkow -> 10000 x [32x32].png
+
+uzyj modelu nieliniowego sieci neuronowe (theanets moze) python2.7
+pickle.dump(...,protocol=2) #uzyj protokolu
+theanets sam zapisuje modele 
+upper 81%
+
+PROJEKT KONCOWY !?
+
+--->KONKURS !??!?!?
+gmum.net/competition
+
+
+binaryzacja, skala szarosci, mediana po kolorach jest spoko do kodowania obrazku
+sieci feed forward (czyli nie mozna miec sieci rekurencyjncych, sieci konwolucyjnych)
+
