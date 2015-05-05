@@ -1,0 +1,20 @@
+regularyzacja -> ma nie dopuscic do przeuczenia
+Przyklady:
+- mozna wczesniej zatrzymac proces uczenia np: norma gradientu
+- dodanie szumu
+- zmiana funkcji kosztu 
+-- MDLP
+-- ograniczanie parametrow (zmniejszanie wag)
+
+Przy projekcie bedzie potrzebna :
+
+metoda walidacji krzyzowej -> dzielimy zbior na k stratyfikowanych elementow
+a potem k razy wykonuje sie petle : 
+for i=1 do k
+	uczymy na kawalkach oprocz i-tego
+	oceniamy na i-tym kawalku 
+
+zwracamy srednia
+scikit learn ma cross validation!!!!
+
+do mniejszego projektu mozna uzyc PCA
